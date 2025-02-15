@@ -1,0 +1,136 @@
+:root {
+    --calc-bg: #1a1a1a;
+    --display-bg: #2d2d2d;
+    --btn-primary: #ff4757;
+    --btn-secondary: #2f3542;
+    --btn-operator: #ffa502;
+    --text-primary: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --logo-gradient: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+}
+
+body {
+    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    background: var(--calc-bg);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    max-width: 320px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.logo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--btn-operator);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.display {
+    background: var(--display-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    max-width: 266px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: inset 0 2px 5px var(--shadow-color);
+    overflow: hidden;
+    overflow-x: auto; 
+    white-space: nowrap;
+}
+
+.calc-btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 12px;
+    border: none;
+    margin: 5px 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.3s ease-out;
+}
+
+.calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.calc-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-number {
+    background: var(--btn-secondary);
+    color: var(--text-primary);
+}
+
+.btn-operator {
+    background: var(--btn-operator);
+    color: var(--text-primary);
+}
+
+.btn-equal {
+    background: var(--btn-primary);
+    color: var(--text-primary);
+}
+.btn-clear {
+    background: var(--btn-primary);
+    color: var(--text-primary);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.row > * {
+    padding: 5px;
+}
+.display::-webkit-scrollbar {
+    height: 8px;
+}
+
+.display::-webkit-scrollbar-thumb {
+    background: var(--btn-operator);
+    border-radius: 4px;
+}
+
+.display::-webkit-scrollbar-track {
+    background: var(--display-bg);
+}
